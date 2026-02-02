@@ -1,15 +1,15 @@
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { PageLayout } from '@/components/PageLayout';
-import { AnimatedHeadline } from '@/components/AnimatedHeadline';
-import { IndiaMapAnimation } from '@/components/IndiaMapAnimation';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
+import { PageLayout } from '../components/PageLayout';
+import { AnimatedHeadline } from '../components/AnimatedHeadline';
+import { IndiaMapAnimation } from '../components/IndiaMapAnimation';
+import { Button } from '../components/ui/button';
+import { Card, CardContent } from '../components/ui/card';
 import { ArrowRight, Map, BarChart3, Radio, Signal, Activity, MapPin, Zap } from 'lucide-react';
 import { useState, useEffect } from 'react';
-import { HowItWorks} from '@/components/HowItWorks';
-import { FAQ } from '@/components/FAQ';
-import { Footer } from '@/components/Footer';
+import { HowItWorks} from '../components/HowItWorks';
+import { FAQ } from '../components/FAQ';
+import { Footer } from '../components/Footer';
  
 const HomePage = () => {
   const navigate = useNavigate();

@@ -1,0 +1,441 @@
+/* stylelint-disable */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* CrowdSense Enterprise Design System */
+@layer base {
+  /* Light theme - Vibrant enterprise design with teal/aqua/blue palette */
+  :root {
+    --background: 195 40% 96%;
+    --foreground: 210 35% 18%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 210 35% 18%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 35% 18%;
+
+    /* Vibrant Teal - Primary brand */
+    --primary: 175 70% 35%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Soft aqua secondary */
+    --secondary: 190 35% 92%;
+    --secondary-foreground: 210 35% 25%;
+
+    --muted: 195 30% 90%;
+    --muted-foreground: 210 25% 45%;
+
+    --accent: 185 40% 88%;
+    --accent-foreground: 210 35% 18%;
+
+    /* Alert colors - vibrant for light mode */
+    --destructive: 0 78% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 195 25% 85%;
+    --input: 195 25% 85%;
+    --ring: 175 70% 35%;
+
+    --radius: 0.75rem;
+
+    /* Status Colors - vibrant and saturated */
+    --status-low: 158 70% 40%;
+    --status-medium: 40 90% 50%;
+    --status-high: 8 85% 55%;
+    --status-critical: 0 85% 48%;
+
+    /* Gradients - soft aqua to teal for enterprise feel */
+    --gradient-primary: linear-gradient(135deg, hsl(175 70% 35%) 0%, hsl(195 75% 42%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(195 35% 97%) 100%);
+    --gradient-glow: radial-gradient(ellipse at center, hsl(175 70% 45% / 0.1) 0%, transparent 70%);
+    --gradient-hero: linear-gradient(145deg, hsl(190 50% 94%) 0%, hsl(185 45% 92%) 30%, hsl(195 40% 95%) 70%, hsl(200 35% 96%) 100%);
+
+    /* Shadows - refined with subtle color */
+    --shadow-sm: 0 1px 4px hsl(200 40% 40% / 0.08), 0 1px 2px hsl(200 40% 40% / 0.05);
+    --shadow-md: 0 4px 14px hsl(200 40% 40% / 0.1), 0 2px 6px hsl(200 40% 40% / 0.06);
+    --shadow-lg: 0 12px 28px hsl(200 40% 40% / 0.12), 0 4px 12px hsl(200 40% 40% / 0.08);
+    --shadow-glow: 0 0 35px hsl(175 70% 45% / 0.15);
+
+    /* Sidebar */
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 210 35% 18%;
+    --sidebar-primary: 175 70% 35%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 190 35% 92%;
+    --sidebar-accent-foreground: 210 35% 25%;
+    --sidebar-border: 195 25% 85%;
+    --sidebar-ring: 175 70% 35%;
+  }
+
+  /* Dark theme */
+  .dark {
+    --background: 222 47% 6%;
+    --foreground: 210 40% 96%;
+
+    --card: 222 47% 9%;
+    --card-foreground: 210 40% 96%;
+
+    --popover: 222 47% 8%;
+    --popover-foreground: 210 40% 96%;
+
+    /* Teal/Cyan - Primary brand */
+    --primary: 174 72% 46%;
+    --primary-foreground: 222 47% 6%;
+
+    /* Slate secondary */
+    --secondary: 217 33% 17%;
+    --secondary-foreground: 210 40% 90%;
+
+    --muted: 217 33% 14%;
+    --muted-foreground: 215 20% 55%;
+
+    --accent: 217 33% 20%;
+    --accent-foreground: 210 40% 96%;
+
+    /* Alert colors */
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217 33% 18%;
+    --input: 217 33% 18%;
+    --ring: 174 72% 46%;
+
+    /* Status Colors */
+    --status-low: 142 76% 46%;
+    --status-medium: 45 93% 58%;
+    --status-high: 0 84% 60%;
+    --status-critical: 0 90% 45%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(174 72% 46%) 0%, hsl(190 80% 50%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(222 47% 11%) 0%, hsl(222 47% 8%) 100%);
+    --gradient-glow: radial-gradient(ellipse at center, hsl(174 72% 46% / 0.15) 0%, transparent 70%);
+
+    /* Shadows */
+    --shadow-sm: 0 2px 8px hsl(222 47% 4% / 0.3);
+    --shadow-md: 0 4px 16px hsl(222 47% 4% / 0.4);
+    --shadow-lg: 0 8px 32px hsl(222 47% 4% / 0.5);
+    --shadow-glow: 0 0 40px hsl(174 72% 46% / 0.2);
+
+    /* Sidebar */
+    --sidebar-background: 222 47% 7%;
+    --sidebar-foreground: 210 40% 90%;
+    --sidebar-primary: 174 72% 46%;
+    --sidebar-primary-foreground: 222 47% 6%;
+    --sidebar-accent: 217 33% 14%;
+    --sidebar-accent-foreground: 210 40% 96%;
+    --sidebar-border: 217 33% 16%;
+    --sidebar-ring: 174 72% 46%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  /* Smooth theme transitions */
+  html {
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  html.dark {
+    color-scheme: dark;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-muted/50;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-muted-foreground/30 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-muted-foreground/50;
+  }
+}
+
+@layer components {
+  /* Status badges */
+  .status-badge {
+    @apply inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold uppercase tracking-wide;
+  }
+
+  .status-low {
+    @apply bg-[hsl(var(--status-low)/0.15)] text-[hsl(var(--status-low))] border border-[hsl(var(--status-low)/0.3)];
+  }
+
+  .status-medium {
+    @apply bg-[hsl(var(--status-medium)/0.15)] text-[hsl(var(--status-medium))] border border-[hsl(var(--status-medium)/0.3)];
+  }
+
+  .status-high {
+    @apply bg-[hsl(var(--status-high)/0.15)] text-[hsl(var(--status-high))] border border-[hsl(var(--status-high)/0.3)];
+  }
+
+  /* Glass card effect */
+  .glass-card {
+    @apply bg-card/80 backdrop-blur-xl border border-border/50 rounded-xl;
+    box-shadow: var(--shadow-md);
+  }
+
+  /* Live indicator pulse */
+  .live-pulse {
+    @apply relative;
+  }
+
+  .live-pulse::before {
+    content: '';
+    @apply absolute w-2 h-2 bg-[hsl(var(--status-low))] rounded-full;
+    animation: pulse-ring 2s ease-out infinite;
+  }
+
+  .live-pulse::after {
+    content: '';
+    @apply absolute w-2 h-2 bg-[hsl(var(--status-low))] rounded-full;
+  }
+
+  @keyframes pulse-ring {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(2.5);
+      opacity: 0;
+    }
+  }
+
+  /* Capacity bar */
+  .capacity-bar {
+    @apply h-2 rounded-full bg-muted overflow-hidden;
+  }
+
+  .capacity-bar-fill {
+    @apply h-full rounded-full transition-all duration-500 ease-out;
+  }
+
+  .capacity-low {
+    @apply bg-[hsl(var(--status-low))];
+  }
+
+  .capacity-medium {
+    @apply bg-[hsl(var(--status-medium))];
+  }
+
+  .capacity-high {
+    @apply bg-[hsl(var(--status-high))];
+  }
+
+  /* Glow effects */
+  .glow-primary {
+    box-shadow: 0 0 30px hsl(var(--primary) / 0.3);
+  }
+
+  .glow-success {
+    box-shadow: 0 0 20px hsl(var(--status-low) / 0.4);
+  }
+
+  .glow-warning {
+    box-shadow: 0 0 20px hsl(var(--status-medium) / 0.4);
+  }
+
+  .glow-danger {
+    box-shadow: 0 0 20px hsl(var(--status-high) / 0.4);
+  }
+
+  /* Pulsing alert animations */
+  .pulse-alert-critical {
+    animation: pulse-critical 1.5s ease-in-out infinite;
+  }
+
+  .pulse-alert-high {
+    animation: pulse-high 2s ease-in-out infinite;
+  }
+
+  .pulse-alert-medium {
+    animation: pulse-medium 2.5s ease-in-out infinite;
+  }
+
+  @keyframes pulse-critical {
+    0%, 100% {
+      box-shadow: 0 0 0 0 hsl(var(--status-critical) / 0.4);
+    }
+    50% {
+      box-shadow: 0 0 20px 10px hsl(var(--status-critical) / 0.2);
+    }
+  }
+
+  @keyframes pulse-high {
+    0%, 100% {
+      box-shadow: 0 0 0 0 hsl(var(--status-high) / 0.3);
+    }
+    50% {
+      box-shadow: 0 0 15px 8px hsl(var(--status-high) / 0.15);
+    }
+  }
+
+  @keyframes pulse-medium {
+    0%, 100% {
+      box-shadow: 0 0 0 0 hsl(var(--status-medium) / 0.2);
+    }
+    50% {
+      box-shadow: 0 0 10px 5px hsl(var(--status-medium) / 0.1);
+    }
+  }
+
+  /* Reduced motion support */
+  @media (prefers-reduced-motion: reduce) {
+    .pulse-alert-critical,
+    .pulse-alert-high,
+    .pulse-alert-medium {
+      animation: none;
+    }
+  }
+
+  /* Data grid */
+  .data-grid {
+    @apply grid gap-4;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  }
+
+  /* Stat card */
+  .stat-card {
+    @apply glass-card p-5 flex flex-col gap-2;
+  }
+
+  .stat-value {
+    @apply text-3xl font-bold tracking-tight;
+  }
+
+  .stat-label {
+    @apply text-sm text-muted-foreground uppercase tracking-wider;
+  }
+
+  /* Map container */
+  .map-container {
+    @apply w-full h-[500px] rounded-xl overflow-hidden border border-border;
+  }
+}
+
+@layer utilities {
+  .text-gradient-primary {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-primary);
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.4s ease-out forwards;
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-count {
+    animation: countUp 0.6s ease-out forwards;
+  }
+}
+
+/* Leaflet overrides - Always dark for optimal heatmap visibility */
+.leaflet-container {
+  background: hsl(222 47% 6%) !important;
+  font-family: inherit;
+}
+
+.leaflet-popup-content-wrapper {
+  background: hsl(222 47% 9%) !important;
+  border: 1px solid hsl(217 33% 18%) !important;
+  border-radius: 0.75rem !important;
+  box-shadow: 0 8px 32px hsl(222 47% 4% / 0.5) !important;
+}
+
+.leaflet-popup-content {
+  color: hsl(210 40% 96%) !important;
+  margin: 0 !important;
+}
+
+.leaflet-popup-tip {
+  background: hsl(222 47% 9%) !important;
+}
+
+.leaflet-popup-close-button {
+  color: hsl(215 20% 55%) !important;
+}
+
+.leaflet-popup-close-button:hover {
+  color: hsl(210 40% 96%) !important;
+}
+
+.leaflet-control-zoom {
+  border: none !important;
+  box-shadow: 0 4px 16px hsl(222 47% 4% / 0.4) !important;
+}
+
+.leaflet-control-zoom a {
+  background: hsl(222 47% 9%) !important;
+  color: hsl(210 40% 96%) !important;
+  border: 1px solid hsl(217 33% 18%) !important;
+}
+
+.leaflet-control-zoom a:hover {
+  background: hsl(217 33% 14%) !important;
+}
+
+.leaflet-control-attribution {
+  background: hsl(222 47% 9% / 0.8) !important;
+  color: hsl(215 20% 55%) !important;
+  font-size: 10px !important;
+}
+
+.leaflet-control-attribution a {
+  color: hsl(174 72% 46%) !important;
+}
+
+.custom-marker {
+  border-radius: 50%;
+  border: 2px solid hsl(222 47% 6%);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+}
+
+/* Map container that's always dark regardless of theme */
+.map-dark-container {
+  background: hsl(222 47% 6%);
+}

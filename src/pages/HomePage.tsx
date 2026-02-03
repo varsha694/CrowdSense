@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { PageLayout } from '../components/PageLayout';
 import { AnimatedHeadline } from '../components/AnimatedHeadline';
@@ -260,16 +260,19 @@ const HomePage = () => {
               {
                 icon: Map,
                 title: 'Live Heatmap',
+                route: '/heatmap',
                 description: 'Interactive India-wide visualization with real-time density indicators and movement tracking.',
               },
               {
                 icon: BarChart3,
                 title: 'Predictive Analytics',
+                route: '/analytics',
                 description: 'AI-powered insights for peak hour predictions and crowd behavior patterns.',
               },
               {
                 icon: Radio,
                 title: 'Instant Alerts',
+                route: '/admin',
                 description: 'Automated notifications when locations approach or exceed capacity thresholds.',
               },
             ].map((feature, i) => (
@@ -280,15 +283,20 @@ const HomePage = () => {
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
               >
-                <Card className="glass-card h-full hover:shadow-lg transition-shadow dark:hover:shadow-primary/5">
-                  <CardContent className="p-6">
-                    <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
-                      <feature.icon className="w-6 h-6 text-primary" />
-                    </div>
-                    <h3 className="font-semibold mb-2">{feature.title}</h3>
-                    <p className="text-sm text-muted-foreground">{feature.description}</p>
-                  </CardContent>
-                </Card>
+                <Link 
+                  to={feature.route}
+                  style={{ textDecoration: 'none' }}
+                >
+                  <Card className="glass-card h-full hover:shadow-lg transition-all dark:hover:shadow-primary/5 hover:border-primary/50 cursor-pointer">
+                    <CardContent className="p-6">
+                      <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4 hover:bg-primary/20 transition-colors">
+                        <feature.icon className="w-6 h-6 text-primary" />
+                      </div>
+                      <h3 className="font-semibold mb-2 hover:text-primary transition-colors">{feature.title}</h3>
+                      <p className="text-sm text-muted-foreground">{feature.description}</p>
+                    </CardContent>
+                  </Card>
+                </Link>
               </motion.div>
             ))}
           </div>

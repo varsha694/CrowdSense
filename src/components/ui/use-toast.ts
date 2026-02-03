@@ -1,4 +1,4 @@
-import { toast as createToast } from "../../hooks/use-toast";
+import { toast as createToast } from "../../hooks/uses-toast";
 import * as React from "react";
 
 export type ToastProps = {

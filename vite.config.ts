@@ -1,13 +1,13 @@
-import { defineConfig } from 'vite'
-import { resolve } from 'path'
-import react from '@vitejs/plugin-react-swc'
+import { defineConfig } from "vite"
+import react from "@vitejs/plugin-react"
+import { resolve } from "path"
 
 export default defineConfig({
-  base: '/CrowdSense/',
-  resolve: {
-    alias: [
-      { find: '@', replacement: resolve(__dirname, 'src') },
-    ],
-  },
   plugins: [react()],
+  resolve: {
+    alias: {
+      '@': resolve(__dirname, 'src'),
+    },
+  },
+  base: "/CrowdSense/",
 })
